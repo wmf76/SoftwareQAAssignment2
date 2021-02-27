@@ -5,5 +5,3 @@ def bmi(weight,heightft,heightin):
     
     return bmi
 
-
-print(bmi(120,5,0))
