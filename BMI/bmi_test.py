@@ -9,7 +9,7 @@ class BMITest(unittest.TestCase):
         self.assertEqual(bmi(92,5,0),(18.4,"Under weight"))
 
     def test_Overwieght(self):
-        self.assertEqual(bmi(200.5,6,4),(25.1,"Over weight"))
+        self.assertEqual(bmi(200.5,6,4),(25.0,"Over weight"))
         self.assertEqual(bmi(210,6,4),(26.2,"Over weight"))
 
     def test_obese(self):
