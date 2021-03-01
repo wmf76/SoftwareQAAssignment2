@@ -8,7 +8,7 @@ def main():
     while(Exit!=True):
         while(option<=0 or option>=4):
             try:
-                option=int(input("Which option would you like to select 1-BMI or 2-Retirement or 3-Exit: "))
+                option=int(input("\nWhich option would you like to select 1-BMI or 2-Retirement or 3-Exit: "))
                 if(option<=0 or option>=4):
                     print("\n Error occured please a make sure to only enter 1, 2, or 3\n")
             except:
@@ -60,7 +60,6 @@ def main():
                     print("\n Error occured please make sure to enter a positive non zero number for your goal\n")
 
             ev=age_when_goal_met(age,salary,per_saved,goal)
-            print(ev)
             if(ev[1]==True):
                 print("\nYou will be "+str(ev[0])+" When you reach $"+str(goal)+" for retirement.")
 
@@ -98,14 +97,18 @@ def main():
                     heightft=int(input("Please enter your height to the closest foot, inches will be entered later: "))
                     if(heightft<=0):
                         print("\nError occured please enter a postive non zero number for your height in feet\n")
+                    if(heightft>11):
+                        print("\nError occured please enter a value below 12\n")
                 except:
                     print("\nError occured please enter a postive non zero number for your height in feet\n")
 
-            while(heightin<0):
+            while(heightin<0 or heightin>11):
                 try:
                     heightin=int(input("Please enter your height to the closest inch: "))
                     if(heightin<0):
-                        print("\nError occured please enter a postive number for your height in inchesn")
+                        print("\nError occured please enter a postive number for your height in inches")
+                    if(heightin>11):
+                        print("\nError occured please enter a value below 12\n")
                 except:
                     print("\nError occured please enter a postive number for your height in inches\n")
             bmi_eval=bmi(weight,heightft,heightin)
