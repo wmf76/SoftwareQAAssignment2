@@ -5,7 +5,7 @@ from retirement import savings_per_year, num_years_till_goal, age_when_goal_met
 def main():
     Exit=False
     option=0
-    while(Exit!=True):
+    while(Exit==False):
         while(option<=0 or option>=4):
             try:
                 option=int(input("\nWhich option would you like to select 1-BMI or 2-Retirement or 3-Exit: "))
@@ -66,18 +66,7 @@ def main():
             else:
                 print("\nYou can not achieve $"+str(goal)+" for retirement because you will be "+str(ev[0])+".")
 
-            option=-1
-            while(option<=0):
-                try:
-                    option=int(input("To recalculate a retirement plan enter 1, to exit back to the main menu enter 2: "))
-                    if(option<=0 or option>=3):
-                        print("\n Error Occured Please enter 1 0r 2\n")
-                except:
-                    print("\n Error Occured Please enter 1 0r 2\n")
-            if(option==1):
-                option=2
-            else:
-                option=0
+            option=0
 
         else:
             weight=0
@@ -114,19 +103,6 @@ def main():
             bmi_eval=bmi(weight,heightft,heightin)
 
             print("Your bmi is: "+str(bmi_eval[0])+" which means you are "+ str(bmi_eval[1])+".")
-            option=-1
-
-            while(option<=0):
-                try:
-                    option=int(input("To recalculate bmi enter 1, to exit back to the main menu enter 2: "))
-                    if(option<=0 or option>=3):
-                        print("\n Error Occured Please enter 1 0r 2\n")
-                except:
-                    print("\n Error Occured Please enter 1 0r 2\n")
-            if(option==1):
-                option=1
-            else:
-                option=0
-            
+            option=0
             
 main()
